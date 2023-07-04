@@ -15,12 +15,28 @@ public class Main {
 	// delete, issue books, add other admins/users but users can only search a book.
 	// Also both admins and users can list all books available
 
-	/* !!! NOTE !!! - change usersFilePath, booksFilePath, issuedBooksFilePath to where you
-	/* want to create .txt files for storing the data
+	/* !!! NOTE - before you run !!! 
+	 * 1. Change usersFilePath, booksFilePath, issuedBooksFilePath to where you
+	 * want to create .txt files for storing the data. if files don't already
+	 * exist, this program will create files.
+	 * 
+	 * 2. Suggest ideas to make this program more modular and in tune 
+	 * with OOPS principles. I've just made a bunch of util classes to get my job done.
+	 * Hope this program works with fewest bugs :)
 	 * */
 	
-	// still left - need to add functionality to delete user, ability to login after until user exits the app, 
-	// some more maybe. and maybe some bugs exist. need to test program
+	/* !!! STILL LEFT !!! 
+	 * 1. Need to add functionality to delete user.
+	 * 2. Ability to login even after a user logs out until user exits the app.
+	 * 3. When user submits book after issuing, add it to the books (increase it's quantity by 1).
+	 * 4. What else ??? 
+	 * */
+	
+	/* !!! NOTED BUGS !!!
+	 * 1. Getting user password from user object using public getter to check if password entered matches user password.
+	 * Need to mark getPassword() method as private and find another way to safely get user password
+	 * to check during authentication
+	 * */
 
 	// display greetings when the application is started
 	static void greetings() {
@@ -71,6 +87,7 @@ public class Main {
 		HandleDataUtil.updateDataToFiles(issuedBooks, issuedBooksFilePath);
 	}
 
+	// user logged in session
 	private static void loggedInSession(User loggedInUser, Scanner sc, ArrayList<Book> books, ArrayList<IssueBook> issuedBooks, ArrayList<User> users) {
 
 		boolean isAdmin = loggedInUser.getRole().equals("Admin");
