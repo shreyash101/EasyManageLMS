@@ -29,7 +29,8 @@ public class Main {
 	 * 1. Need to add functionality to delete user.
 	 * 2. Ability to login even after a user logs out until user exits the app.
 	 * 3. When user submits book after issuing, add it to the books (increase it's quantity by 1).
-	 * 4. What else ??? 
+	 * 4. Need to display info of whatever is added- user/book/issued book so that programmer 
+	 * can store this info and test program
 	 * */
 	
 	/* !!! NOTED BUGS !!!
