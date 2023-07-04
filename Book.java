@@ -1,5 +1,21 @@
+import java.io.Serializable;
 
-public class Book {
+public class Book implements Serializable {
+	
+	@Override
+	public String toString() {
+		return "Book [bookId=" + bookId + ", bookName=" + bookName + ", writerName=" + writerName + ", bookPrice="
+				+ bookPrice + ", bookQuantity=" + bookQuantity + "]";
+	}
+	private static final long serialversionUID =
+            129343438L; // used to identify if sender and receiver have compatible classes for working with 
+						// serialized and deserialized objects
+
+	private String bookId;
+	private String bookName;
+	private String writerName;
+	private double bookPrice;
+	private int bookQuantity;
 	
 	public Book(String bookId, String bookName, String writerName, double bookPrice, int bookQuantity) {
 		this.bookId = bookId;
@@ -8,12 +24,6 @@ public class Book {
 		this.bookPrice = bookPrice;
 		this.bookQuantity = bookQuantity;
 	}
-	
-	private String bookId;
-	private String bookName;
-	private String writerName;
-	private double bookPrice;
-	private int bookQuantity;
 	
 	public String getBookId() {
 		return bookId;

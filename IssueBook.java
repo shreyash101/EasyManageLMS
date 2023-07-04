@@ -1,5 +1,10 @@
+import java.io.Serializable;
 
-public class IssueBook {
+public class IssueBook implements Serializable {
+	
+	private static final long serialversionUID =
+            129343487L; // used to identify if sender and receiver have compatible classes for working with 
+						// serialized and deserialized objects
 	
 	private String bookId;
 	private String userId;
